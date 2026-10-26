@@ -1,0 +1,728 @@
+{
+  "candidate_head": "8ded041abac535db3cb04ca350ebc5c903678e4a",
+  "baseline_eq_source": "415ea38c63141382b0051eac5ef0fa22cbbbec69",
+  "platform": "Windows x64 / GTX 1650 sm_75 / driver 551.86",
+  "torch": "2.10.0+cu126",
+  "triton_distribution": "triton-windows 3.2.0.post21",
+  "baseline_promotion": {
+    "passed": 285,
+    "failed": 41,
+    "failed_cases": [
+      "boundary:torch.int32:16777216:scalar=16777217",
+      "boundary:torch.int64:16777216:scalar=16777217",
+      "boundary:torch.int64:9007199254740992:scalar=9007199254740993",
+      "scalar:torch.bool:-1:strided=False",
+      "scalar:torch.bool:-1:strided=True",
+      "scalar:torch.bool:16777217:strided=False",
+      "scalar:torch.bool:16777217:strided=True",
+      "scalar:torch.bool:2:strided=False",
+      "scalar:torch.bool:2:strided=True",
+      "scalar:torch.float16:2:strided=False",
+      "scalar:torch.float16:2:strided=True",
+      "scalar:torch.float32:2:strided=False",
+      "scalar:torch.float32:2:strided=True",
+      "scalar:torch.float64:2:strided=False",
+      "scalar:torch.float64:2:strided=True",
+      "scalar:torch.int16:-1:strided=False",
+      "scalar:torch.int16:-1:strided=True",
+      "scalar:torch.int16:2:strided=False",
+      "scalar:torch.int16:2:strided=True",
+      "scalar:torch.int16:9007199254740993:strided=False",
+      "scalar:torch.int16:9007199254740993:strided=True",
+      "scalar:torch.int32:-1:strided=False",
+      "scalar:torch.int32:-1:strided=True",
+      "scalar:torch.int32:16777217:strided=False",
+      "scalar:torch.int32:16777217:strided=True",
+      "scalar:torch.int32:2:strided=False",
+      "scalar:torch.int32:2:strided=True",
+      "scalar:torch.int32:9007199254740993:strided=False",
+      "scalar:torch.int32:9007199254740993:strided=True",
+      "scalar:torch.int64:-1:strided=False",
+      "scalar:torch.int64:-1:strided=True",
+      "scalar:torch.int64:16777217:strided=False",
+      "scalar:torch.int64:16777217:strided=True",
+      "scalar:torch.int64:2:strided=False",
+      "scalar:torch.int64:2:strided=True",
+      "scalar:torch.int8:-1:strided=False",
+      "scalar:torch.int8:-1:strided=True",
+      "scalar:torch.int8:2:strided=False",
+      "scalar:torch.int8:2:strided=True",
+      "scalar:torch.int8:9007199254740993:strided=False",
+      "scalar:torch.int8:9007199254740993:strided=True"
+    ]
+  },
+  "baseline_target": {
+    "passed": 36,
+    "failed": 24,
+    "cases": [
+      {
+        "class": "tests.test_eq_integer_precision",
+        "name": "test_generic_eq_preserves_large_integer_ids[False-dtype0]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq_integer_precision",
+        "name": "test_generic_eq_preserves_large_integer_ids[False-dtype1]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq_integer_precision",
+        "name": "test_generic_eq_preserves_large_integer_ids[True-dtype0]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq_integer_precision",
+        "name": "test_generic_eq_preserves_large_integer_ids[True-dtype1]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq_integer_precision",
+        "name": "test_generic_eq_int64_around_float64_precision_limit[False]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq_integer_precision",
+        "name": "test_generic_eq_int64_around_float64_precision_limit[True]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype0-shape0]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype0-shape1]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype0-shape2]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype0-shape3]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype0-shape4]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype0-shape5]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype1-shape0]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype1-shape1]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype1-shape2]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype1-shape3]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype1-shape4]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype1-shape5]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype2-shape0]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype2-shape1]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype2-shape2]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype2-shape3]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype2-shape4]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype2-shape5]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype0-shape0]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype0-shape1]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype0-shape2]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype0-shape3]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype0-shape4]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype0-shape5]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype1-shape0]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype1-shape1]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype1-shape2]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype1-shape3]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype1-shape4]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype1-shape5]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype2-shape0]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype2-shape1]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype2-shape2]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype2-shape3]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype2-shape4]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype2-shape5]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype0-shape0]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype0-shape1]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype0-shape2]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype0-shape3]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype0-shape4]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype0-shape5]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype1-shape0]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype1-shape1]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype1-shape2]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype1-shape3]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype1-shape4]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype1-shape5]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype2-shape0]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype2-shape1]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype2-shape2]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype2-shape3]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype2-shape4]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype2-shape5]",
+        "status": "failed"
+      }
+    ]
+  },
+  "candidate_promotion": {
+    "passed": 288,
+    "failed": 38,
+    "failed_cases": [
+      "scalar:torch.bool:-1:strided=False",
+      "scalar:torch.bool:-1:strided=True",
+      "scalar:torch.bool:16777217:strided=False",
+      "scalar:torch.bool:16777217:strided=True",
+      "scalar:torch.bool:2:strided=False",
+      "scalar:torch.bool:2:strided=True",
+      "scalar:torch.float16:2:strided=False",
+      "scalar:torch.float16:2:strided=True",
+      "scalar:torch.float32:2:strided=False",
+      "scalar:torch.float32:2:strided=True",
+      "scalar:torch.float64:2:strided=False",
+      "scalar:torch.float64:2:strided=True",
+      "scalar:torch.int16:-1:strided=False",
+      "scalar:torch.int16:-1:strided=True",
+      "scalar:torch.int16:2:strided=False",
+      "scalar:torch.int16:2:strided=True",
+      "scalar:torch.int16:9007199254740993:strided=False",
+      "scalar:torch.int16:9007199254740993:strided=True",
+      "scalar:torch.int32:-1:strided=False",
+      "scalar:torch.int32:-1:strided=True",
+      "scalar:torch.int32:16777217:strided=False",
+      "scalar:torch.int32:16777217:strided=True",
+      "scalar:torch.int32:2:strided=False",
+      "scalar:torch.int32:2:strided=True",
+      "scalar:torch.int32:9007199254740993:strided=False",
+      "scalar:torch.int32:9007199254740993:strided=True",
+      "scalar:torch.int64:-1:strided=False",
+      "scalar:torch.int64:-1:strided=True",
+      "scalar:torch.int64:16777217:strided=False",
+      "scalar:torch.int64:16777217:strided=True",
+      "scalar:torch.int64:2:strided=False",
+      "scalar:torch.int64:2:strided=True",
+      "scalar:torch.int8:-1:strided=False",
+      "scalar:torch.int8:-1:strided=True",
+      "scalar:torch.int8:2:strided=False",
+      "scalar:torch.int8:2:strided=True",
+      "scalar:torch.int8:9007199254740993:strided=False",
+      "scalar:torch.int8:9007199254740993:strided=True"
+    ]
+  },
+  "candidate_target": {
+    "passed": 54,
+    "failed": 6,
+    "cases": [
+      {
+        "class": "tests.test_eq_integer_precision",
+        "name": "test_generic_eq_preserves_large_integer_ids[False-dtype0]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq_integer_precision",
+        "name": "test_generic_eq_preserves_large_integer_ids[False-dtype1]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq_integer_precision",
+        "name": "test_generic_eq_preserves_large_integer_ids[True-dtype0]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq_integer_precision",
+        "name": "test_generic_eq_preserves_large_integer_ids[True-dtype1]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq_integer_precision",
+        "name": "test_generic_eq_int64_around_float64_precision_limit[False]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq_integer_precision",
+        "name": "test_generic_eq_int64_around_float64_precision_limit[True]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype0-shape0]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype0-shape1]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype0-shape2]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype0-shape3]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype0-shape4]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype0-shape5]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype1-shape0]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype1-shape1]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype1-shape2]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype1-shape3]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype1-shape4]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype1-shape5]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype2-shape0]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype2-shape1]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype2-shape2]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype2-shape3]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype2-shape4]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq[dtype2-shape5]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype0-shape0]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype0-shape1]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype0-shape2]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype0-shape3]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype0-shape4]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype0-shape5]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype1-shape0]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype1-shape1]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype1-shape2]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype1-shape3]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype1-shape4]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype1-shape5]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype2-shape0]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype2-shape1]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype2-shape2]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype2-shape3]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype2-shape4]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_eq",
+        "name": "test_eq_scalar[dtype2-shape5]",
+        "status": "failed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype0-shape0]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype0-shape1]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype0-shape2]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype0-shape3]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype0-shape4]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype0-shape5]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype1-shape0]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype1-shape1]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype1-shape2]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype1-shape3]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype1-shape4]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype1-shape5]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype2-shape0]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype2-shape1]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype2-shape2]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype2-shape3]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype2-shape4]",
+        "status": "passed"
+      },
+      {
+        "class": "tests.test_equal",
+        "name": "test_equal[dtype2-shape5]",
+        "status": "passed"
+      }
+    ]
+  },
+  "new_promotion_failures": [],
+  "fixed_promotion_cases": [
+    "boundary:torch.int32:16777216:scalar=16777217",
+    "boundary:torch.int64:16777216:scalar=16777217",
+    "boundary:torch.int64:9007199254740992:scalar=9007199254740993"
+  ],
+  "candidate_supported_subset": {
+    "passed": 42,
+    "deselected_bf16": 18
+  },
+  "control": {
+    "baseline_eq_source": "415ea38c63141382b0051eac5ef0fa22cbbbec69",
+    "candidate_head": "8ded041abac535db3cb04ca350ebc5c903678e4a",
+    "target_exit": 1,
+    "promotion_exit": 1,
+    "candidate_restored": true,
+    "candidate_source_sha256": "e17d492450ba6ff35f4573d91dec47b273a9b9eb0a4fa2f1d7ee0ce940432bae"
+  }
+}
