@@ -22,7 +22,7 @@ from flag_gems.runtime import device
 from ..utils.pointwise_dynamic import ComplexMode, pointwise_dynamic
 
 logger = logging.getLogger(__name__)
-device = device.name
+from ._device_guard import is_backend_device_type
 
 _FALLBACK_KEYSET = torch._C.DispatchKeySet(
     torch._C.DispatchKey.CompositeExplicitAutograd
@@ -65,15 +65,15 @@ mul_func_scalar.register_complex(
 def mul(A, B):
     logger.debug("GEMS_CAMBRICON MUL")
     if isinstance(A, torch.Tensor) and isinstance(B, torch.Tensor):
-        if A.device.type != device and B.device.type != device:
+        if not is_backend_device_type(A.device.type) and not is_backend_device_type(B.device.type):
             return torch.ops.aten.mul.Tensor.redispatch(_FALLBACK_KEYSET, A, B)
         return mul_func(A, B, False)
     elif isinstance(A, torch.Tensor):
-        if A.device.type != device:
+        if not is_backend_device_type(A.device.type):
             return torch.ops.aten.mul.Scalar.redispatch(_FALLBACK_KEYSET, A, B)
         return mul_func_scalar(A, B, False)
     elif isinstance(B, torch.Tensor):
-        if B.device.type != device:
+        if not is_backend_device_type(B.device.type):
             return torch.ops.aten.mul.Scalar.redispatch(_FALLBACK_KEYSET, B, A)
         return mul_func_scalar(B, A, False)
     else:
@@ -90,7 +90,7 @@ def mul_(A, B):
         raise RuntimeError(
             f"result type {dtype} cannot be cast to inplace dtype {A.dtype}"
         )
-    if A.device.type != device:
+    if not is_backend_device_type(A.device.type):
         if isinstance(B, torch.Tensor):
             return torch.ops.aten.mul_.Tensor.redispatch(_FALLBACK_KEYSET, A, B)
         return torch.ops.aten.mul_.Scalar.redispatch(_FALLBACK_KEYSET, A, B)
