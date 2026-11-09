@@ -23,7 +23,7 @@ from flag_gems.runtime import device
 from ..utils.pointwise_dynamic import pointwise_dynamic
 
 logger = logging.getLogger(__name__)
-device = device.name
+from ._device_guard import is_backend_device_type
 
 
 @pointwise_dynamic(promotion_methods=[(0, 1, "ALWAYS_BOOL")])
@@ -34,7 +34,7 @@ def eq_func(x, y):
 
 def eq(A, B):
     if A.device != B.device:
-        if A.device.type == device:
+        if is_backend_device_type(A.device.type):
             B = B.to(A.device)
         else:
             A = A.to(B.device)
