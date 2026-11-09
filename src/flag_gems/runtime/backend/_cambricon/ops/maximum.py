@@ -21,7 +21,7 @@ from flag_gems.runtime import device
 
 from ..utils.pointwise_dynamic import pointwise_dynamic
 
-device = device.name
+from ._device_guard import is_backend_device_type
 logger = logging.getLogger(__name__)
 
 
@@ -37,5 +37,5 @@ def maximum_kernel(X, Y):
 
 def maximum(X, Y):
     logger.debug("GEMS_CAMBRICON MAXIMUM")
-    assert X.device.type == device and Y.device.type == device
+    assert is_backend_device_type(X.device.type) and is_backend_device_type(Y.device.type)
     return maximum_kernel(X, Y)
