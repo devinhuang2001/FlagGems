@@ -21,7 +21,7 @@ from flag_gems.runtime import device
 
 from ..utils.pointwise_dynamic import pointwise_dynamic
 
-device = device.name
+from ._device_guard import is_backend_device_type
 logger = logging.getLogger(__name__)
 
 
@@ -36,5 +36,5 @@ def minimum_kernel(X, Y):
 
 def minimum(X, Y):
     logger.debug("GEMS_CAMBRICON MINIMUM")
-    assert X.device.type == device and Y.device.type == device
+    assert is_backend_device_type(X.device.type) and is_backend_device_type(Y.device.type)
     return minimum_kernel(X, Y)
